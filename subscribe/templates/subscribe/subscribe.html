@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div class="subscribe_field"></div>
+      {{field.errors}}
+      <label for="{{field.id_for_label}}">
+        {{field.label}}</label>
+      {{field}}
+    </div>
+    <!-- <div class="subscribe_field">
+      {{field.errors}}
+      {{field.label_tag}}
+      {{field}}
+    </div> -->
+    {% endfor %}
+    <!-- <div class="subscribe_field">
+      {{ form.first_name.errors }}
+      <label for="{{form.first_name.id_for_label}}">{{form.first_name.label}}</label>
+      {{ form.first_name }}
+    </div>
+
+    <div class="subscribe_field">
+      {{ form.l_name.errors }}
+      <label for={{form.last_name.id_for_label}}>{{form.last_name.label}}</label>
+      {{ form.last_name }}
+    </div>
+
+    <div class="subscribe_field"></div>
+    {{ form.email.errors }}
+      <label for={{form.email.id_for_label}}>{{form.email.label}}</label>
+      {{ form.email }}
+    </div> -->
+
+    <!-- {% csrf_token %}
+
+    {% if email_error_empty %}
+      <p>{{ email_error_empty }}</p>
+    {% endif %}
+
+    <label for="f_name">First name:</label>
+    <input type="text" id="f_name" name="firstname" placeholder="Your first name" required>
+    <br>
+    <label for="l_name">Last name</label>
+    <input type="text" id="l_name" name="lastname" placeholder="Your last name" required>
+    <br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <br>
+    <input type="submit" value="Submit"> -->
+  </form>
+</form>
+</body>
+</html>
